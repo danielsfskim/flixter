@@ -9,6 +9,7 @@
   </head>
   <body>
 
+<div id="flex-content-container">
   <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -41,16 +42,27 @@
     </div>
   </nav>  
 
-<% if notice.present? %>
-  <p class="alert alert-info"><%= notice %></p>
-<% end %>
-<% if alert.present? %>
-  <p class="alert alert-danger"><%= alert %></p>
-<% end %>
+
+  <% if notice.present? %>
+    <p class="alert alert-info"><%= notice %></p>
+  <% end %>
+  <% if alert.present? %>
+    <p class="alert alert-danger"><%= alert %></p>
+  <% end %>
+
+  <%= yield %>
+</div>
+
+<div id="footer">
+  <div class="container">
+    <b>Footer here</b>
+    <br />
+  <%= link_to 'Link', '#' %>
+  </div>
+</div>
 
 
 
-    <%= yield %>
 
   </body>
 </html>
