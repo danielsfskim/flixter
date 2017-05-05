@@ -7,7 +7,7 @@ class Instructor::LessonsController < ApplicationController
   end
 
   def create
-    @lesson = current_user.lessons.create(lesson_params)
+    @lesson = current_section.lessons.create(lesson_params)
     redirect_to instructor_course_path(current_section.course)
   end
 
@@ -15,7 +15,7 @@ class Instructor::LessonsController < ApplicationController
 
   def require_authorized_for_current_section
      if current_section.course.user != current_user
-        return render plain: 'Unauthorized'. status: :unauthorized
+        return render plain: 'Unauthorized', status: :unauthorized
     end
   end
 
