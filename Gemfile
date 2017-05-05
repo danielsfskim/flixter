@@ -77,8 +77,11 @@ gem "fog-aws"
 #gem mini_magick
 gem "mini_magick"
 
+#carrierwave
 gem 'carrierwave-aws'
 
+#stripe gem
+gem 'stripe'
 
 
 
