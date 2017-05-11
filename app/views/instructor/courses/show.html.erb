@@ -1,12 +1,28 @@
 <script>
   $(function() {
+    $('.new-lesson-button').click(function(event){
+      var lessonUrl = $( event.target).data('lesson-url');
+      $('#newLessonForm').attr('action', lessonUrl);
+    });
     $('.lessons').sortable({
-      update: function (event, ui) {
+      update: function( event, ui ) {
         $.ajax({
-          type: 'PUT',
+          type: "PUT",
           url: ui.item.data('update-url'),
           dataType: 'json',
           data: { lesson: { row_order_position: ui.item.index() } }
+        });
+      }
+    });
+  });
+  $(function() {
+    $('.sections').sortable({
+      update: function( event, ui ) {
+        $.ajax({
+          type: "PUT",
+          url: ui.item.data('update-url'),
+          dataType: 'json',
+          data: { section: { row_order_position: ui.item.index() } }
         });
       }
     });
@@ -25,10 +41,11 @@
   </div>
 
   <ul>
-    <% current_course.sections.each do |section| %>
-      <li>
+    <% current_course.sections.rank(:row_order).each do |section| %>
+      <li data-update-url="<%= instructor_section_path(section) %>" class="section-li">
         <%= section.title %>
         <%= link_to 'New Lesson', new_instructor_section_lesson_path(section), class: 'float-right btn btn-primary btn-sm' %>
+
         <ul class="lessons">
           <% section.lessons.rank(:row_order).each do |lesson| %>
             <li data-update-url="<%= instructor_lesson_path(lesson) %>">
