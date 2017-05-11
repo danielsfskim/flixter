@@ -15,7 +15,7 @@
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-   <a class="navbar-brand" href="#">Flixter</a>
+   <%= link_to 'Flixter', root_path, class: 'navbar-brand' %>
     <div class="collapse navbar-collapse" id="navbarNav">
      <ul class="navbar-nav mr-auto mt-2 mt-md-0">
       <li class="nav-item">
@@ -23,7 +23,10 @@
       </li>
      </ul>
      <ul class="navbar-nav">
-       <% if user_signed_in? %>
+      <% if user_signed_in? %>
+         <li class="nav-item">
+           <%= link_to 'My Dashboard', dashboard_path %>
+         </li>
          <li class="nav-item">
            <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
         </li>
