@@ -13,6 +13,7 @@ class LessonsController < ApplicationController
   end
 
   def require_authorized_for_current_course
+    
       this_course = current_lesson.section.course
 
       if !current_user.enrolled_in?(this_course) && this_course.user != current_user

@@ -41,10 +41,10 @@ class Instructor::SectionsController < ApplicationController
       @current_course ||= Course.find(params[:course_id])
     else
       current_section.course
+    end
   end
-end
 
   def section_params
     params.require(:section).permit(:title, :row_order_position)
   end
-end
+ end
