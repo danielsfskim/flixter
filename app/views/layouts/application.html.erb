@@ -56,28 +56,29 @@
 
 <div id="footer">
   <div class="container">
-    <div class="col-12 col-sm-3">
-    <b>Teachers</b>
-    <br />
-    <%= link_to 'Teach a Course', new_instructor_course_path %>
-    <br />
+    <div class="row">
+      <div class="col-12 col-sm-3">
+      <b>Teachers</b>
+      <br />
+      <%= link_to 'Teach a Course', new_instructor_course_path %>
+      <br />
     <%= link_to 'My Dashboard', dashboard_path %>
   </div>
   <div class="col-12 col-sm-3">
     <b>About</b>
     <br />
-    <%= link_to 'Team', '#' %>
+    <%= link_to 'Team', team_path %>
     <br />
-    <%= link_to 'Careers', '#' %>
+    <%= link_to 'Careers', careers_path %>
     <br />
-    <%= link_to 'Privacy Policy', '#' %>
+    <%= link_to 'Privacy Policy', privacy_path %>
   </div>
   <div class="col-12 col-sm-3">
     <b>Contact</b>
     <br />
-    daniel@thefirehoseproject.com
+    danielsfskim@gmail.com
     <br />
-    Los Angeles Square
+    Southern California
     <br />
     Los Angeles CA, 90210
   </div>
@@ -88,8 +89,12 @@
       <%= link_to 'http://github.com/danielsfskim' do %>
         <span class="fa fa-github-square fa-2x social-button"></span>
       <% end%>
+      <%= link_to 'https://www.facebook.com/daniel.kim09' do %>
         <span class="fa fa-facebook-square fa-2x social-button"></span>
+      <% end %>
+      <%= link_to 'https://twitter.com/ssdkim' do %>
         <span class="fa fa-twitter-square fa-2x social-button"></span>
+      <% end %>
    </div>
   </div>
  </div>
