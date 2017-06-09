@@ -16,16 +16,17 @@
       <span class="navbar-toggler-icon"></span>
     </button>
    <%= link_to 'Flixter', root_path, class: 'navbar-brand' %>
+
     <div class="collapse navbar-collapse" id="navbarNav">
      <ul class="navbar-nav mr-auto mt-2 mt-md-0">
       <li class="nav-item">
-        <%= link_to 'See All Courses', courses_path %>
+        <%= link_to 'See All Courses', courses_path, class: 'nav-link' %>
       </li>
      </ul>
      <ul class="navbar-nav">
       <% if user_signed_in? %>
          <li class="nav-item">
-           <%= link_to 'My Dashboard', dashboard_path %>
+           <%= link_to 'My Dashboard', dashboard_path, class: 'nav-link' %>
          </li>
          <li class="nav-item">
            <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
